@@ -82,10 +82,10 @@ function keyPressed() {
 }
 
 function squareGoDown() {
-    square3y--;
+    square3y++;
 
-    if (square3y < 0) {
-        square3y = 1000;
+    if (square3y > 1000) {
+        square3y = 0;
     }
 }
 
