@@ -58,16 +58,22 @@ function setup() {
     /* 5B: length of the list in 5A */
     /* 5C: the text content of the first element in the list from 5A */
     /***CODE */
+    console.log(document.getElementsByTagName("h2"));
+    console.log(document.getElementsByTagName("h2").length);
+    console.log(document.getElementsByTagName("h2")[0].textContent);
     /***OUTPUT: 
-     * 
+     * 0: h2length: 1[[Prototype]]: HTMLCollection
+       script.js:62 1
+       script.js:63  The header of this fancy page
      */
 
 
     /*************************************** */
     /* 6: the element with id name parent */
     /***CODE */
+    console.log(document.getElementById("parent"));
     /***OUTPUT: 
-     * 
+     * <section id="parent">...</section>
      */
 
     /*************************************** */
@@ -79,39 +85,62 @@ function setup() {
     /*************************************** */
     /* 1: Select the first paragraph and replace the text within the paragraph... */
     /***CODE */
+    document.getElementById("1").textContent = "This is the first paragraph";
     /*************************************** */
     /* 2: Select all elements in the HTML that have the class name content-container
      and change the background color ... of first and second ...*/
     /***CODE */
+    let contentContainers = document.getElementsByClassName("content-container");
+    contentContainers[0].style.backgroundColor = "red";
+    contentContainers[1].style.backgroundColor = "blue";
 
     /*************************************** */
     /* 3: Change the src element of the first image element on the page to be ...
     /***CODE */
+    document.getElementsByTagName("img")[0].src = "task-1-images/one.png";
 
     /*************************************** */
-    /* 4: Select the third paragraph element on the page and 
+    /* 4: Select the third paragraph element on the page and
     replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
     /***CODE */
+    let thirdP = document.getElementById("3");
+    let h2 = document.createElement("h2");
+    h2.textContent = "TEST 123";
+    thirdP.innerHTML = "";
+    thirdP.appendChild(h2);
 
     /*************************************** */
-    /* 5: Select the fourth paragraph element on the page and 
+    /* 5: Select the fourth paragraph element on the page and
     add to the existing content an h2 element containing the text `TEST 123`
     /***CODE */
+    let fourthP = document.getElementById("4");
+    let h2_2 = document.createElement("h2");
+    h2_2.textContent = "TEST 123";
+    fourthP.appendChild(h2_2);
 
     /*************************************** */
-    /* 6: Select the fifth paragraph element on the page and add to the existing content 
+    /* 6: Select the fifth paragraph element on the page and add to the existing content
     an img element that holds `one.png`, and add the class newStyle to said paragraph element.
     /***CODE */
-
+    let fifthP = document.getElementById("5");
+    let img = document.createElement("img");
+    img.src = "task-1-images/one.png";
+    img.classList.add("newStyle");
+    fifthP.appendChild(img);
 
     /*************************************** */
-    /* 7: Add the following array variable: let colors = ['red','blue','green','orange'];, 
+    /* 7: Add the following array variable: let colors = ['red','blue','green','orange'];,
     then access all elements with class name inner-container and save to a variable called `innerContainers`. 
     Next, iterate over the colors array, and for each color: 
     assign the element from innerContainers variable with the same index 
     (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
     a background using that color.
     /***CODE */
+    let colors = ['red', 'blue', 'green', 'orange'];
+    let innerContainers = document.getElementsByClassName("inner-container");
+    for (let i = 0; i < colors.length; i++) {
+        innerContainers[i].style.backgroundColor = colors[i];
+    }
 
     /*************************************** */
     /*** END PART TWO MODIFY */
