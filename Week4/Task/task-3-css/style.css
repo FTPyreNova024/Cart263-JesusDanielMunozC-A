@@ -114,6 +114,12 @@ h5 {
   transform: translate(-50%, -50%);
 }
 
+.TEAM_A_sqaure {
+  width: 20px;
+  height: 20px;
+  background: #3498db;
+}
+
 /*CSS TEAM H**/
 
 .TEAM_H_box {
