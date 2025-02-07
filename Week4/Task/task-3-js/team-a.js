@@ -113,26 +113,26 @@ function setup_A() {
   function aniB(parentCanvas) {
     console.log("in B");
     let squares = [];
-    let intervalId;
+    let scale = 1;
 
-    // Ensure the canvas has a size and position
-    parentCanvas.style.position = "relative";
-    parentCanvas.style.width = "400px";
-    parentCanvas.style.height = "400px";
+    setInterval(() => {
+      scale = scale === 1 ? 1.5 : 1;
 
-    setupAnimation();
+      squares.forEach(square => {
+        square.style.transform = `scale(${scale})`;
+      });
+    }, 1000);
 
     function setupAnimation() {
       let offset = 60;
-
       for (let i = 0; i < 12; i++) {
         for (let j = 0; j < 12; j++) {
           let square = document.createElement("div");
           square.classList.add("TEAM_A_square");
           square.style.width = "20px";
           square.style.height = "20px";
-          square.style.position = "absolute";
-
+          square.style.background = "black";
+          square.style.position = "absolute"; // Ensure positioning works
           square.style.left = offset + i * 25 + "px";
           square.style.top = offset + j * 25 + "px";
 
@@ -141,20 +141,7 @@ function setup_A() {
         }
       }
     }
-
-    let scale = 1;
-    intervalId = setInterval(() => {
-      scale = scale === 1 ? 1.5 : 1;
-
-      squares.forEach(square => {
-        square.style.transform = `scale(${scale})`;
-      });
-    }, 1000);
-
-    // Clear the interval when the animation is stopped
-    parentCanvas.addEventListener('stopAnimation', () => {
-      clearInterval(intervalId);
-    });
+    setupAnimation();
   }
   /**************** ANI C ************************************ */
   /** PUT ALL YOUR CODE FOR INTERACTIVE PATTERN C INSIDE  HERE */
