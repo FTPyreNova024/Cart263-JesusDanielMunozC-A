@@ -106,32 +106,19 @@ h5 {
 
 /*CSS TEAM A**/
 
-.TEAM_A_circle {
-  border-radius: 10px;
-  background-color: rgb(223, 30, 117);
+.TEAM_A_C_square {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(172, 11, 11);
   position: absolute;
   transform: translate(-50%, -50%);
-
 }
 
-/* .TEAM_A_box {
-  width: 40px;
-  height: 32px;
-  background-color: rgb(34, 29, 41);
-  position: absolute;
-  color: white;
-  text-align: center;
-  padding-top: 8px;
-  font-size: 14px;
-  margin: 1px;
+.TEAM_A_sqaure {
+  width: 20px;
+  height: 20px;
+  background: #3498db;
 }
-
-.TEAM_A_box:hover {
-  background-color: rgb(30, 168, 223);
-  cursor: pointer;
-
-} */
-
 
 /*CSS TEAM H**/
 
@@ -155,6 +142,7 @@ h5 {
 
 .TEAM_H_circle {
   border-radius: 10px;
+  ;
   background-color: rgb(223, 30, 117);
   position: absolute;
   transform: translate(-50%, -50%);
