@@ -103,19 +103,16 @@ window.onload = function () {
     if (e.code === "Enter") {
       console.log("Enter key pressed");
 
-      //create some birds
-
       // Create variables for our arguments for clarity
-      let x = Math.random() * (window.innerWidth);
+      let x = Math.random() * window.innerWidth;
+      let y = Math.random() * document.querySelector(".wire").offsetHeight;
 
-      // Create a new flower using the arguments
-      let bird = new Bird(x);
-      // Add the flower to the array of flowers
+      // Create a new bird using the arguments
+      let bird = new Bird(x, y);
+      // Add the bird to the array of birds
       garden.birds.push(bird);
-
     }
   });
-
   createAndRenderTheGarden();
 
 }
