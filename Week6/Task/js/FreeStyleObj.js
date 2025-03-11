@@ -9,6 +9,9 @@ class FreeStyleObj {
     this.yOffset = 20;
     this.angularSpeed = .07;
     this.context = context;
+    this.baseY = y; // Store the initial y position
+    this.animationSpeed = 0.05; // Speed of the up and down motion
+    this.animationTheta = 0; // Angle for the sine wave
 
     // Set up audio context and analyzer
     this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -40,10 +43,9 @@ class FreeStyleObj {
 
     // Get canvas dimensions
     const canvasWidth = this.context.canvas.width;
-    const canvasHeight = this.context.canvas.height;
 
     // Center the line vertically
-    this.y = canvasHeight / 2;
+    this.y = this.baseY + Math.sin(this.animationTheta) * 50; // Update y position with sine wave
 
     this.theta = 0; // reset every time
     this.context.fillStyle = this.fill_color; // change the color we are using
@@ -59,8 +61,7 @@ class FreeStyleObj {
   }
 
   update() {
-    // update freestyle
-    // console.log("free style update")
-    // this.x+=1;
+    // Update the animation angle
+    this.animationTheta += this.animationSpeed;
   }
 }
