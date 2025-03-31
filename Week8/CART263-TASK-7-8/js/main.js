@@ -1,7 +1,7 @@
 window.onload = async function () {
     console.log("task 7-8");
     try {
-        const response = await fetch('iris.json');
+        const response = await fetch('data/iris.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
